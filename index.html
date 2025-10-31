@@ -671,6 +671,269 @@ nav,
   z-index: 1; /* ensures it's above the background */
 }
 
+/* === Skills Section Styling === */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Hover effect === */
+.skill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.skill:hover::before {
+  transform: scaleX(1);
+}
+
+.skill:hover {
+  color: var(--dark);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+/* === Profile Image Animations === */
+.profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite; /* 🌀 floating motion */
+}
+
+/* Hover glow effect */
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.7);
+  border-color: var(--primary);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Optional rotating gradient ring around photo */
+.profile-img::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary), var(--secondary), var(--primary));
+  z-index: -1;
+  animation: spin 4s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.about-image { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+
+/* === Skills Section (Same Look as "Contact Me" Button) === */
+.skill {
+  background: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px; /* same round shape */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Gradient background animation (like Contact Me hover) */
+.skill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+/* Neon glow border */
+.skill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.4),
+              0 0 25px rgba(0, 245, 255, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+/* Hover = same as Contact Me */
+.skill:hover::before {
+  transform: scaleX(1);
+}
+
+.skill:hover::after {
+  opacity: 1;
+}
+
+.skill:hover {
+  color: var(--dark);
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.5);
+}
+
+/* === About Section Layout === */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* === Text === */
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  color: var(--light);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* === Profile Image === */
+.about-image {
+  flex: 0 0 320px; /* more width on right */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Rotating gradient ring */
+.profile-ring {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: conic-gradient(var(--primary), var(--secondary), var(--primary));
+  animation: spin 8s linear infinite;
+  padding: 8px;
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
+}
+
+/* Profile image */
+.profile-img {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--dark);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(0, 245, 255, 0.7);
+  border-color: var(--primary);
+}
+
+/* Floating motion */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Ring rotation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Skills below About section */
+.skills-title {
+  color: var(--secondary);
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 20px;
+  }
+}
 
     </style>
   </head>
@@ -717,65 +980,84 @@ nav,
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <h3>Who am I?</h3>
-          <p>
-            I'm a passionate Web Developer with expertise in JavaScript, React,
-            and modern web technologies. I specialize in building responsive,
-            user-friendly, and scalable applications with clean and efficient
-            code. With a strong foundation in Data Structures and Algorithms
-            (500+ problems solved), I bring problem-solving skills, logical
-            thinking, and attention to detail into every project I work on.
-          </p>
-          <p>
-            Beyond web development, I have hands-on experience with Microsoft
-            Azure, Machine Learning, and Data Science, enabling me to design
-            intelligent and cloud-ready solutions. I’ve also worked on AI-driven
-            applications and enterprise-level systems that combine innovation
-            with performance. My goal is to craft digital experiences that are
-            not only visually appealing but also high-performing, secure, and
-            accessible to all users.
-          </p>
-          <h3>My Skills</h3>
-          <div class="skills">
-            <span class="skill">HTML5</span>
-            <span class="skill">CSS3</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Node.js</span>
-            <span class="skill">Express.js</span>
-            <span class="skill">SQL</span>
-            <span class="skill">C/C++</span>
-            <span class="skill">Python</span>
-            <span class="skill">DSA</span>
-            <span class="skill">React.js</span>
-            <span class="skill">MongoDB</span>
-            <span class="skill">Machine Learning</span>
-            <span class="skill">Data Science</span>
-            <span class="skill">REST API</span>
-            <span class="skill">Postman</span>
-            <span class="skill">Bun</span>
-            <span class="skill">Docker</span>
-            <div class="skill">Next.js</div>
-            <div class="skill">Type Script</div>
-            <div class="skill">MERN Stack</div>
-            <div class="skill">Java</div>
-            <div class="skill">Bootstrap</div>
-            <div class="skill">Power BI</div>
-            <div class="skill">Micrsoft Azure</div>
-          </div>
-        </div>
-        <div class="about-image">
-          <img
-            src="./images/Profile_photo_linkdin .png"
-            alt="Pranay Khojare"
-            class="profile-img"
-          />
-        </div>
+   <!-- About Section -->
+<section class="section" id="about">
+  <h2 class="section-title">About Me</h2>
+
+  <div class="about-content">
+    <!-- Left: Text -->
+    <div class="about-text">
+      <h3>Who am I?</h3>
+      <p>
+        I'm a passionate Web Developer with expertise in JavaScript, React,
+        and modern web technologies. I specialize in building responsive,
+        user-friendly, and scalable applications with clean and efficient code.
+        With a strong foundation in Data Structures and Algorithms, I bring
+        problem-solving skills, logical thinking, and attention to detail into
+        every project I work on.
+      </p>
+      <p>
+        Beyond web development, I have hands-on experience with Microsoft Azure,
+        Machine Learning, and Data Science, enabling me to design intelligent and
+        cloud-ready solutions. I’ve also worked on AI-driven applications and
+        enterprise-level systems that combine innovation with performance.
+        My goal is to craft digital experiences that are not only visually
+        appealing but also high-performing, secure, and accessible to all users.
+      </p>
+    </div>
+
+    <!-- Right: Profile Image -->
+    <div class="about-image">
+      <div class="profile-ring">
+        <img src="./images/Profile_photo_linkdin .png" alt="Pranay Khojare" class="profile-img" />
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- My Skills below -->
+  <h3 class="skills-title">My Skills</h3>
+  <div class="skills">
+    <span class="skill">HTML5</span>
+    <span class="skill">CSS3</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">Node.js</span>
+    <span class="skill">Express.js</span>
+    <span class="skill">SQL</span>
+    <span class="skill">C/C++</span>
+    <span class="skill">Python</span>
+    <span class="skill">DSA</span>
+    <span class="skill">React.js</span>
+    <span class="skill">MongoDB</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Data Science</span>
+    <span class="skill">REST API</span>
+    <span class="skill">Postman</span>
+    <span class="skill">Bun</span>
+    <span class="skill">Docker</span>
+    <span class="skill">Next.js</span>
+    <span class="skill">TypeScript</span>
+    <span class="skill">MERN Stack</span>
+    <span class="skill">Java</span>
+    <span class="skill">Bootstrap</span>
+    <span class="skill">Power BI</span>
+    <span class="skill">Microsoft Azure</span>
+    <span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">AWS</span>
+<span class="skill">Vercel</span>
+<span class="skill">Render</span>
+<span class="skill">Netlify</span>
+<span class="skill">Tailwind CSS</span>
+<span class="skill">Redux</span>
+<span class="skill">Framer Motion</span>
+<span class="skill">PostgreSQL</span>
+<span class="skill">Prisma ORM</span>
+
+
+
+
+  </div>
+</section>
 
     <!-- Experience Section -->
 <section class="section" id="experience">
