@@ -644,9 +644,39 @@
       .toast.error {
         background-color: #f44336;
       }
+
+      /* ✅ Global background animation style */
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;            /* stays behind everything */
+  pointer-events: none;  /* lets buttons/links work */
+  background-color: var(--dark);
+}
+
+/* ✅ Keep all content above the global background */
+section,
+footer,
+header,
+nav,
+.hero,
+#about,
+#experience,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1; /* ensures it's above the background */
+}
+
+
     </style>
   </head>
   <body>
+    <div id="particles-bg"></div> <!-- ⬅️ add this for global motion background -->
+
     <!-- Navigation -->
     <nav>
       <div class="logo">PK</div>
@@ -679,7 +709,7 @@
           technology.
         </p>
         <div class="cta-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#projects" class="btn btn-secondary">View My Work</a>
           <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
@@ -733,6 +763,7 @@
             <div class="skill">MERN Stack</div>
             <div class="skill">Java</div>
             <div class="skill">Bootstrap</div>
+            <div class="skill">Power BI</div>
             <div class="skill">Micrsoft Azure</div>
           </div>
         </div>
@@ -747,23 +778,44 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="section" id="experience">
-      <h2 class="section-title">Experience & Education</h2>
-      <div class="timeline">
-        <div class="timeline-item left">
-          <div class="timeline-content">
-            <div class="timeline-date">02/2023 - Present</div>
-            <h3 class="timeline-title">Full Stack Web Developer</h3>
-            <h4>Freelancer</h4>
-            <p>
-              Engineered and deployed custom websites for top-tier clients,
-              incorporating user feedback to optimise UI/UX and achieving a 40%
-              reduction in page load time, significantly enhancing user
-              satisfaction and retention rates. Utilised Java, HTML, CSS3,
-              JavaScript, React
-            </p>
-          </div>
-        </div>
+<section class="section" id="experience">
+  <h2 class="section-title">Experience & Education</h2>
+  <div class="timeline">
+
+
+<!-- Internship (Completed Entry) -->
+<div class="timeline-item left">
+  <div class="timeline-content">
+    <div class="timeline-date">Sep 2025 - Oct 2025</div>
+    <h3 class="timeline-title">AI & Cloud Intern</h3>
+    <h4>AICTE • Edunet Foundation & IBM SkillsBuild</h4>
+    <p>
+      Successfully completed a <strong>4-week virtual internship</strong> focused on
+      <strong>Artificial Intelligence</strong> and <strong>Cloud Computing</strong>. 
+      Gained hands-on experience through <strong>industry-led training</strong>, 
+      <strong>masterclasses</strong>, and <strong>project-based learning</strong>. 
+      Developed real-world AI solutions while upskilling with the 
+      <strong>IBM SkillsBuild</strong> platform.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Full Stack Web Developer -->
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <div class="timeline-date">02/2023 - Present</div>
+        <h3 class="timeline-title">Full Stack Web Developer</h3>
+        <h4>Freelancer</h4>
+        <p>
+          Engineered and deployed custom websites for top-tier clients,
+          incorporating user feedback to optimise UI/UX and achieving a 40%
+          reduction in page load time, significantly enhancing user
+          satisfaction and retention rates. Utilised Java, HTML, CSS3,
+          JavaScript, React.
+        </p>
+      </div>
+    </div>
         <div class="timeline-item right">
           <div class="timeline-content">
             <div class="timeline-date">Bachelor of Engineering</div>
@@ -913,6 +965,12 @@
                 class="btn btn-secondary"
                 >Code</a
               >
+              <a
+        href="https://btecservice.co.in/"
+        class="btn btn-primary"
+        target="_blank"
+        >Live Demo</a
+      >
             </div>
           </div>
         </div>
@@ -954,7 +1012,7 @@
     class="project-image"
   />
   <div class="project-content">
-    <h3 class="project-title">Full-Stack E-Commerce Website (Ongoing)</h3>
+    <h3 class="project-title">Full-Stack E-Commerce Website</h3>
     <p class="project-description">
       Currently developing a full-stack E-Commerce web application using the
       MERN stack. Features include product catalog, user authentication,
@@ -976,14 +1034,148 @@
       <a
         href="https://github.com/PRANAYKHOJARE"
         class="btn btn-secondary"
-        >Code (In Progress)</a
+        >Code</a
       >
       <!-- Future Live Demo Button -->
+        <a
+        href="https://forever-frontend-gamma-five.vercel.app/"
+        class="btn btn-primary"
+        target="_blank"
+        >Live Demo</a
+      >
       <!-- <a href="#" class="btn btn-primary disabled">Live (Coming Soon)</a> -->
     </div>
   </div>
 </div>
-    </section>
+
+<!-- Project 8 -->
+<div class="project-card" data-aos="fade-up" data-aos-delay="800">
+  <img
+    src="./images/netflix clomne.png"
+    alt="Netflix Clone"
+    class="project-image"
+  />
+  <div class="project-content">
+    <h3 class="project-title">Netflix Clone</h3>
+    <p class="project-description">
+      Built a fully responsive Netflix clone using React.js and TMDB API for
+      fetching movie data. Implemented Firebase authentication and dynamic
+      routing to replicate the real Netflix experience. Features include
+      category browsing, hover trailers, and adaptive design for all devices.
+      Deployed live on Vercel.
+    </p>
+    <div class="project-tech">
+      <span class="tech">React.js</span>
+      <span class="tech">TMDB API</span>
+      <span class="tech">Firebase</span>
+      <span class="tech">CSS3</span>
+      <span class="tech">Vercel</span>
+    </div>
+    <div class="project-links">
+      <a
+        href="https://github.com/PRANAYKHOJARE"
+        class="btn btn-secondary"
+        target="_blank"
+        >Code</a
+      >
+      <a
+        href="https://netflix-clone-eight-sepia.vercel.app/"
+        class="btn btn-primary"
+        target="_blank"
+        >Live Demo</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Project 9 - Internship Project -->
+<div class="project-card" data-aos="fade-up" data-aos-delay="900">
+  <img
+    src="./images/Ai workout diet planner .png"
+    alt="AI Workout & Diet Planner (Internship Project)"
+    class="project-image"
+  />
+  <div class="project-content">
+    <h3 class="project-title">
+      AI Workout & Diet Planner <span class="badge">Internship Project</span>
+    </h3>
+    <p class="project-description">
+      Created as part of my <strong>AI & Cloud Internship</strong> with 
+      <strong>Edunet Foundation – IBM SkillsBuild</strong>, this AI-powered 
+      application generates personalized <strong>workout</strong> and 
+      <strong>diet plans</strong> based on user preferences such as goals, 
+      body type, and lifestyle. Built using <strong>Python</strong> and 
+      <strong>Streamlit</strong>, the app uses basic <strong>machine learning</strong> 
+      logic to recommend fitness routines and nutrition plans, and is deployed 
+      on <strong>Streamlit Cloud</strong>.
+    </p>
+    <div class="project-tech">
+      <span class="tech">Python</span>
+      <span class="tech">Streamlit</span>
+      <span class="tech">Machine Learning</span>
+      <span class="tech">IBM SkillsBuild</span>
+      <span class="tech">Cloud Deployment</span>
+    </div>
+    <div class="project-links">
+      <a
+        href="https://github.com/PRANAYKHOJARE"
+        class="btn btn-secondary"
+        target="_blank"
+        >Code</a
+      >
+      <a
+        href="https://pranaykhojare-personalized-workout-diet-planner-with-app-kew0yj.streamlit.app/"
+        class="btn btn-primary"
+        target="_blank"
+        >Live Demo</a
+      >
+    </div>
+  </div>
+</div>    
+
+
+<!-- Project 10 -->
+<div class="project-card" data-aos="fade-up" data-aos-delay="1000">
+  <img
+    src="./images/e-learning frontend.png"
+    alt="Kaksha | E-Learning Website (Frontend)"
+    class="project-image"
+  />
+  <div class="project-content">
+    <h3 class="project-title">Kaksha | E-Learning Website (Frontend)</h3>
+    <p class="project-description">
+      Developed a responsive and visually appealing <strong>E-Learning platform frontend</strong> 
+      using <strong>React.js</strong> and <strong>Vite</strong>. Integrated smooth animations, 
+      dynamic navigation, and interactive course sections to enhance user engagement. 
+      Deployed seamlessly on <strong>Vercel</strong> for fast performance, scalability, 
+      and a professional user experience.
+    </p>
+    <div class="project-tech">
+      <span class="tech">React.js</span>
+      <span class="tech">Vite</span>
+      <span class="tech">JavaScript</span>
+      <span class="tech">Web Development</span>
+      <span class="tech">Frontend</span>
+      <span class="tech">Vercel</span>
+    </div>
+    <div class="project-links">
+      <a
+        href="https://github.com/PRANAYKHOJARE/E-learning-website-Frontend"
+        class="btn btn-secondary"
+        target="_blank"
+        >Code</a
+      >
+      <a
+        href="https://e-learning-website-frontend.vercel.app/"
+        class="btn btn-primary"
+        target="_blank"
+        >Live Demo</a
+      >
+    </div>
+  </div>
+</div>
+
+</section>
 
     <!-- Contact Section -->
     <section class="section" id="contact">
@@ -1039,10 +1231,10 @@
     <!-- Footer -->
     <footer>
       <div class="social-links">
-        <a href="linkedin.com/in/pranay-khojare-a23505211/" class="social-link"
+        <a href="https://www.linkedin.com/in/pranay-khojare-a23505211/" class="social-link"
           ><i class="fab fa-linkedin-in"></i
         ></a>
-        <a href="github.com/PRANAYKHOJARE" class="social-link"
+        <a href="https://github.com/PRANAYKHOJARE" class="social-link"
           ><i class="fab fa-github"></i
         ></a>
         <a href="https://www.instagram.com/pranay_k23/" class="social-link"
@@ -1165,6 +1357,30 @@
           },
           retina_detect: true,
         });
+
+              // ✅ Global background animation (visible across the whole site)
+      particlesJS("particles-bg", {
+        particles: {
+          number: { value: 70, density: { enable: true, value_area: 900 } },
+          color: { value: "#00F5FF" },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#4A00E0",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: { enable: true, speed: 2, out_mode: "out" },
+          size: { value: 2 },
+          opacity: { value: 0.7 },
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "grab" } },
+          modes: { grab: { distance: 140, line_linked: { opacity: 0.8 } } },
+        },
+        retina_detect: true,
+      });
+
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
